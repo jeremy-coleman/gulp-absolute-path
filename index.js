@@ -78,27 +78,14 @@ module.exports = function (options) {
             break;
           }
 
-          var modulesParentPath;
-          var modulesPath;
-
-          if (__dirname.indexOf('/node_modules/') > 0) {
-            modulesParentPath = '../..';
-            modulesPath = '..';
-          } else {
-            modulesParentPath = '.';
-            modulesPath = './node_modules';
-          }
-
-          modulesPath = Path.resolve(modulesPath + '/' + path);
-//        console.log(modulesPath);
-
+          const modulesPath = Path.resolve('./node_modules/' + path);
           if (FS.existsSync(modulesPath)) {
             break;
           }
 
           const rootDir = options.rootDir || '.';
           path = rootDir + '/' + line.substring(fromPos + from.length, toPos);
-          path = Path.resolve(modulesParentPath + '/' + path);
+          path = Path.resolve('./' + path);
           path = Path.relative(
             Path.dirname(file.history.toString()),
             path);

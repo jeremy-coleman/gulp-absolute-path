@@ -73,5 +73,8 @@ Node.js standard modules, node_modules packages, relative path.
 
 ## Changelog
 
+* 1.0.2
+  * node_modulesパスの判定ミスを修正
+
 * 1.0.0
   * Initial release
