@@ -73,6 +73,9 @@ Node.js standard modules, node_modules packages, relative path.
 
 ## Changelog
 
+* 1.0.3
+  * ignorePathes add domain, http2, inspector, perf_hooks
+
 * 1.0.2
   * node_modulesパスの判定ミスを修正
 
