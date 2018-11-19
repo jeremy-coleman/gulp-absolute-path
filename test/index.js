@@ -1,4 +1,4 @@
-const Vinyl = require('vinyl');
+const Vinyl =   require('vinyl');
 const assert =  require('assert');
 const abspath = require('../');
 

@@ -1,6 +1,6 @@
 {
   "name": "gulp-absolute-path",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "import & require absolute path gulp plugin",
   "main": "index.js",
   "scripts": {

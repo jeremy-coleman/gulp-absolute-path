@@ -8,6 +8,7 @@ module.exports = function (options) {
   options = options || {};
   const ignorePathes = [
     'assert',
+    'async_hooks',
     'buffer',
     'child_process',
     'cluster',
@@ -37,6 +38,7 @@ module.exports = function (options) {
     'util',
     'v8',
     'vm',
+    'worker_threads',
     'zlib'
   ];
 
