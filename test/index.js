@@ -1,4 +1,4 @@
-const gutil =   require('gulp-util');
+const Vinyl = require('vinyl');
 const assert =  require('assert');
 const abspath = require('../');
 
@@ -15,8 +15,8 @@ function testPath(from, to, args, callback) {
 
   stream.on('end', callback);
 
-  stream.write(new gutil.File({
-    history: __dirname + '/../' + args.file,
+  stream.write(new Vinyl({
+    path: __dirname + '../../' + args.file,
     contents: new Buffer(input)
   }));
 
@@ -35,10 +35,10 @@ function testRequirePath(args, callback) {
  * node_modules path
  */
 describe('node_modules path', function() {
-  it('import gulp-util', function(callback) {
+  it('import vinyl', function(callback) {
     const args = {
       file:   'sub1/sub2/dummy.js',
-      inpath: 'gulp-util'
+      inpath: 'vinyl'
     };
     testImportPath(args, callback);
   });
