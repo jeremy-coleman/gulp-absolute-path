@@ -76,7 +76,7 @@ module.exports = function (options) {
         return line;
       });
 
-      file.contents = new Buffer(newLines.join('\n'));
+      file.contents = Buffer.from(newLines.join('\n'));
     }
 
     this.push(file);
