@@ -4,43 +4,11 @@ const through = require('through2');
 const FS =      require('fs');
 const Path =    require('path');
 
+const {builtinModules} = require('module')
+
 module.exports = function (options) {
   options = options || {};
-  const ignorePathes = [
-    'assert',
-    'async_hooks',
-    'buffer',
-    'child_process',
-    'cluster',
-    'console',
-    'crypto',
-    'dgram',
-    'dns',
-    'domain',
-    'events',
-    'fs',
-    'http',
-    'http2',
-    'https',
-    'inspector',
-    'net',
-    'os',
-    'path',
-    'perf_hooks',
-    'querystring',
-    'readline',
-    'repl',
-    'stream',
-    'string_decoder',
-    'tls',
-    'tty',
-    'url',
-    'util',
-    'v8',
-    'vm',
-    'worker_threads',
-    'zlib'
-  ];
+  const ignorePathes = builtinModules
 
   function transform(file, encoding, callback) {
     if (file.isStream()) {
